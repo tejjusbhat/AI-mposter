@@ -12,6 +12,7 @@ export default function App() {
 
   const [newMessageText, setNewMessageText] = useState("");
   const sendMessage = useMutation(api.messages.send);
+  const likeMessage = useMutation(api.messages.like);
 
   async function handleSendMessage(event: FormEvent) {
     event.preventDefault();
@@ -31,9 +32,17 @@ export default function App() {
             <span>{message.author}:</span>
             <span>{message.content}</span>
             <span>{new Date(message._creationTime).toLocaleTimeString()}</span>
+            <button
+              onClick={async () => {
+                await likeMessage({ messageId: message._id });
+              }}
+            >
+              {message.likes ? <span>{message.likes}</span> : null} 🤍
+            </button>
           </li>
         ))}
       </ul>
+      
       <form onSubmit={handleSendMessage}>
         <input
           value={newMessageText}
