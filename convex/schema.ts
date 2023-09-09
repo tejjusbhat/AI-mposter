@@ -14,4 +14,8 @@ export default defineSchema({
     name: v.string(),
     tokenIdentifier: v.string(),
   }).index("by_token", ["tokenIdentifier"]),
+  likes: defineTable({
+    liker: v.string(),
+    messageId: v.id("messages"),
+  }).index("byMessageId", ["messageId"]),
 });
