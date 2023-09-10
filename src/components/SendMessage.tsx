@@ -10,14 +10,14 @@ export default function SendMessage(props: {chatroomId: Id<"chatrooms">}) {
   const [newMessageText, setNewMessageText] = useState("");
   const sendMessage = useMutation(api.messages.send);
 
-  async function handleSendMessage(event: FormEvent, chatroomId: Id<"chatrooms">) {
+  async function handleSendMessage(event: FormEvent) {
     event.preventDefault();
-    await sendMessage({ body: newMessageText, chatroomId:  chatroomId});
+    await sendMessage({ body: newMessageText, chatroomId: props.chatroomId});
     setNewMessageText("");
   }
 
   return (
-    <form onSubmit={(e) => handleSendMessage(e, props.chatroomId)}>
+    <form onSubmit={(e) => handleSendMessage(e)}>
       <input
         value={newMessageText}
         onChange={(event) => setNewMessageText(event.target.value)}
