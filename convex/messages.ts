@@ -1,9 +1,8 @@
 import { v } from "convex/values";
-import { query } from "./_generated/server";
-import { mutation } from "./_generated/server";
+import { query, mutation } from "./_generated/server";
 
 export const send = mutation({
-  args: { body: v.string() },
+  args: { body: v.string(), chatroomId: v.id("chatrooms") },
   handler: async (ctx, args) => {
     const identity = await ctx.auth.getUserIdentity();
     if (!identity) {
@@ -19,14 +18,23 @@ export const send = mutation({
       throw new Error("Unauthenticated call to mutation");
     }
 
-    await ctx.db.insert("messages", { content: args.body, senderId: user._id });
+    await ctx.db.insert("messages", {
+      content: args.body,
+      senderId: user._id,
+      chatroomId: args.chatroomId,
+    });
   },
 });
 
 export const list = query({
-  args: {},
-  handler: async (ctx) => {
-    const messages = await ctx.db.query("messages").order("asc").take(100);
+  args: { chatroomId: v.id("chatrooms") },
+  handler: async (ctx, args) => {
+    const messages = await ctx.db
+      .query("messages")
+      .withIndex("by_chatroom", (q) => q.eq("chatroomId", args.chatroomId))
+      .order("asc")
+      .take(100);
+
     return Promise.all(
       messages.map(async (message) => {
         const likes = await ctx.db
@@ -35,7 +43,7 @@ export const list = query({
           .collect();
         const user = await ctx.db.get(message.senderId);
         return {
-          author: user!.name,
+          sender: user!.name,
           ...message,
           likes: likes.length,
         };
@@ -52,7 +60,7 @@ export const like = mutation({
     if (!identity) {
       throw new Error("Unauthenticated call to mutation");
     }
-    const user   = await ctx.db
+    const user = await ctx.db
       .query("users")
       .withIndex("by_token", (q) =>
         q.eq("tokenIdentifier", identity.tokenIdentifier)
@@ -62,9 +70,9 @@ export const like = mutation({
       throw new Error("Unauthenticated call to mutation");
     }
     const likes = await ctx.db
-          .query("likes")
-          .withIndex("byMessageId", (q) => q.eq("messageId", messageId))
-          .collect();
+      .query("likes")
+      .withIndex("byMessageId", (q) => q.eq("messageId", messageId))
+      .collect();
 
     let flag: boolean = false;
     likes.forEach(async (like) => {
@@ -72,8 +80,8 @@ export const like = mutation({
         flag = true;
         await ctx.db.delete(like._id);
       }
-    })
-    if (flag === false){
+    });
+    if (flag === false) {
       await ctx.db.insert("likes", { liker: user.name, messageId: messageId });
     }
   },

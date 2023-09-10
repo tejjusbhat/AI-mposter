@@ -43,39 +43,37 @@ h2 {
   font-size: 0.75em;
 }
 
-ul {
+.messageBox {
+  display: flex;
+  flex-direction: column;
   margin: 8px;
   border-radius: 8px;
   border: solid 1px lightgray;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
-ul:empty {
-  display: none;
-}
-
-li {
+.messageBox {
   display: flex;
-  justify-content: flex-start;
+  justify-content: ce;
   padding: 8px 16px 8px 16px;
   border-bottom: solid 1px lightgray;
   font-size: 16px;
 }
 
-li:last-child {
+.messageBox:last-child {
   border: 0;
 }
 
-li span:nth-child(1) {
+.messageBox span:nth-child(1) {
   font-weight: bold;
   margin-right: 4px;
   white-space: nowrap;
 }
-li span:nth-child(2) {
+.messageBox span:nth-child(2) {
   margin-right: 4px;
   word-break: break-word;
 }
-li span:nth-child(3) {
+.messageBox span:nth-child(3) {
   color: #6c757d;
   margin-left: auto;
   white-space: nowrap;
