@@ -1,17 +1,23 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import { Doc } from "../../convex/_generated/dataModel";
+import { Id } from "../../convex/_generated/dataModel";
 import Badge from "./Badge";
 import { SignOutButton } from "@clerk/clerk-react";
 import SendMessage from "./SendMessage";
 import Message from "./Message";
 
-export default function Chatroom(props: { chatroom: Doc<"chatrooms"> }) {
-  const messages = useQuery(api.messages.list, { chatroomId: props.chatroom._id }) || [];
+interface ChatroomProps {
+  name: string;
+  creator: string;
+  id: Id<"chatrooms">;
+}
+
+export default function Chatroom(props: ChatroomProps ) {
+  const messages = useQuery(api.messages.list, { chatroomId: props.id }) || [];
 
   return (
     <main>
-      <h1>{props.chatroom.name}</h1>
+      <h1>{props.name}</h1>
       <Badge />
       <h2>
         <SignOutButton />
@@ -28,7 +34,7 @@ export default function Chatroom(props: { chatroom: Doc<"chatrooms"> }) {
           />
         ))}
       </div>
-      <SendMessage chatroomId={props.chatroom._id}/>
+      <SendMessage chatroomId={props.id}/>
     </main>
   );
 }

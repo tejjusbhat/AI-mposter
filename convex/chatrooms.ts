@@ -22,7 +22,6 @@ export const create = mutation({
     await ctx.db.insert("chatrooms", {
       name: args.name,
       creatorId: user._id,
-      messages: [],
       gameStatus: "waiting",
     });
   },

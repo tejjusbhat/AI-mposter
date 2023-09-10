@@ -5,7 +5,6 @@ export default defineSchema({
   chatrooms: defineTable({
     name: v.string(),
     creatorId: v.id("users"),
-    messages: v.array(v.id("messages")),
     gameStatus: v.string(),
   }),
   messages: defineTable({
