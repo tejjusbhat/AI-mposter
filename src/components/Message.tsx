@@ -14,7 +14,7 @@ export default function Message(props: MessageProps) {
   const likeMessage = useMutation(api.messages.like);
 
   return (
-    <div className="messageBox">
+    <div className="message">
       <span>{props.sender}:</span>
       <span>{props.content}</span>
       <span>{props.sentAt.toLocaleTimeString()}</span>

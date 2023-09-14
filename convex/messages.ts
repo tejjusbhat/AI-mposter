@@ -31,7 +31,7 @@ export const list = query({
   handler: async (ctx, args) => {
     const messages = await ctx.db
       .query("messages")
-      .withIndex("by_chatroom", (q) => q.eq("chatroomId", args.chatroomId))
+      .withIndex("by_chatroomId", (q) => q.eq("chatroomId", args.chatroomId))
       .order("asc")
       .take(100);
 

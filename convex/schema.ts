@@ -11,7 +11,7 @@ export default defineSchema({
     senderId: v.id("users"),
     content: v.string(),
     chatroomId: v.id("chatrooms"),
-  }).index("by_chatroom", ["chatroomId"]),
+  }).index("by_chatroomId", ["chatroomId"]),
   users: defineTable({
     name: v.string(),
     tokenIdentifier: v.string(),

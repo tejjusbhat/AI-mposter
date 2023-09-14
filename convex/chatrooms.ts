@@ -48,3 +48,25 @@ export const list = query({
     );
   },
 });
+
+export const getChatroom = query({
+  args: { chatroomId: v.string() },
+  handler: async (ctx, args) => {
+    const chatroom = await ctx.db
+      .query("chatrooms")
+      .filter((q) => q.eq(q.field("_id"), args.chatroomId))
+      .unique();
+
+    if (!chatroom) {
+      throw new Error("Chatroom not found");
+    }
+
+    const creator = await ctx.db.get(chatroom.creatorId);
+
+    return {
+      creator: creator!.name,
+      chatroomId: chatroom._id,
+      name: chatroom.name,
+    };
+  },
+});

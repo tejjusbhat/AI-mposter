@@ -1,27 +1,34 @@
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { Id } from "../../convex/_generated/dataModel";
+import { useNavigate } from "react-router-dom";
 import Badge from "./Badge";
-import { SignOutButton } from "@clerk/clerk-react";
 import SendMessage from "./SendMessage";
 import Message from "./Message";
 
-interface ChatroomProps {
-  name: string;
+interface ChatroomPageProps {
+  chatroomId: Id<"chatrooms">;
   creator: string;
-  id: Id<"chatrooms">;
+  name: string;
 }
 
-export default function Chatroom(props: ChatroomProps ) {
-  const messages = useQuery(api.messages.list, { chatroomId: props.id }) || [];
+export default function ChatroomPage(props: ChatroomPageProps) {
+  const messages =
+    useQuery(api.messages.list, { chatroomId: props.chatroomId }) || [];
+
+  const navigate = useNavigate();
 
   return (
-    <main>
-      <h1>{props.name}</h1>
+    <div>
+      <h1>{props.creator}</h1>
       <Badge />
-      <h2>
-        <SignOutButton />
-      </h2>
+      <button
+        onClick={() => {
+          navigate(`/`);
+        }}
+      >
+        Back
+      </button>
       <div className="messageBox">
         {messages.map((message) => (
           <Message
@@ -34,7 +41,7 @@ export default function Chatroom(props: ChatroomProps ) {
           />
         ))}
       </div>
-      <SendMessage chatroomId={props.id}/>
-    </main>
+      <SendMessage chatroomId={props.chatroomId} />
+    </div>
   );
 }
