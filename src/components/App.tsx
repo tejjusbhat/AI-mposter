@@ -4,7 +4,7 @@ import LoadingChatroom from "./LoadingChatroom";
 
 export default function App() {
   return (
-    <Router>
+    <Router>    
       <Routes>
         <Route path="/chatrooms/:chatroomId" element={<LoadingChatroom />} />
         <Route path="/" element={<ChatroomSelect />} />
