@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
-import LoginPage from "./components/LoginPage";
+import { Home } from "./components/Home";
 import {
   ConvexReactClient,
   Authenticated,
@@ -24,7 +24,7 @@ ReactDOM.render(
           <App />
         </Authenticated>
         <Unauthenticated>
-          <LoginPage />
+          <Home />
         </Unauthenticated>
         <AuthLoading>
           <p>Loading...</p>
