@@ -1,4 +1,10 @@
 /* reset */
+@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,109 +12,122 @@
   line-height: 1.5;
 }
 
-body {
-  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", helvetica,
-    sans-serif;
+* button:hover {
+  cursor: pointer;
 }
 
-main {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  width: min(800px, 95vw);
-  margin: 0 auto;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 8px;
-  font-size: 1.8em;
-  font-weight: 500;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-.badge {
-  text-align: center;
-  margin-bottom: 16px;
-}
-.badge span {
-  background-color: #212529;
-  color: #ffffff;
-  border-radius: 6px;
-  font-weight: bold;
-  padding: 4px 8px 4px 8px;
-  font-size: 0.75em;
-}
-
-.messageBox {
+.chatroomSelect {
+  min-height: 100vh;
+  height: fit-content;
+  background-image: linear-gradient(to left, #ba3c96, #006f9a);
   display: flex;
   flex-direction: column;
-  margin: 8px;
-  border-radius: 8px;
-  border: solid 1px lightgray;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  align-items: center;
 }
 
-.messageBox {
+.chatroomSelect > .header {
   display: flex;
-  justify-content: ce;
-  padding: 8px 16px 8px 16px;
-  border-bottom: solid 1px lightgray;
-  font-size: 16px;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  padding: 2rem 0 2rem 0;
 }
 
-.messageBox:last-child {
-  border: 0;
+.chatroomSelect > .header button {
+  height: 3.5rem;
+  border: transparent;
+  border-radius: 1rem;
+  background-color: #000000;
+  padding: 0.75rem 3rem 0.75rem 3rem;
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
-.messageBox span:nth-child(1) {
-  font-weight: bold;
-  margin-right: 4px;
-  white-space: nowrap;
-}
-.messageBox span:nth-child(2) {
-  margin-right: 4px;
-  word-break: break-word;
-}
-.messageBox span:nth-child(3) {
-  color: #6c757d;
-  margin-left: auto;
-  white-space: nowrap;
+.chatroomSelect > .header button:hover {
+  background-color: #131313;
 }
 
-form {
+.chatroomSelect > .text-wrapper {
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  background-image: linear-gradient(to right, #cb40a4, #006f9a);
+  color: #ffffff;
+  font-family: "Inter-ExtraBold", Helvetica;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+}
+
+.chatroomList {
+  min-height: 50vh;
+  height: fit-content;
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.75);
+  flex-wrap: wrap;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  border-radius: 2rem;
+  padding: 3rem 0 3rem 0;
+  margin-bottom: 25px;
 }
 
-input:not([type]) {
-  padding: 6px 12px 6px 12px;
-  color: rgb(33, 37, 41);
-  border: solid 1px rgb(206, 212, 218);
-  border-radius: 8px;
-  font-size: 16px;
+.chatroomIcon {
+  height: 10rem;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input[type="submit"],
-button {
-  margin-left: 4px;
-  background: lightblue;
-  color: white;
-  padding: 6px 12px 6px 12px;
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: rgb(49, 108, 244);
+.chatroomIcon > div {
+  width: 16rem;
+  height: 10rem;
+  border: 0.4rem solid transparent;
+  border-radius: 2rem;
+  background-image: linear-gradient(rgba(0, 0, 0), rgba(0, 0, 0)),
+    linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
-input[type="submit"]:hover,
-button:hover {
-  background-color: rgb(41, 93, 207);
+.chatroomIcon > div > span {
+  margin: 1rem 0 0 0;
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-input[type="submit"]:disabled,
-button:disabled {
-  background-color: rgb(122, 160, 248);
+.chatroomIcon > div > span:last-child {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+}
+
+.chatroomIcon > button {
+  background-color: #ffffff;
+  border: 0.2rem solid transparent;
+  border-radius: 2rem;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+    linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  height: 3rem;
+  width: 7rem;
+  color: #000000;
+  font-family: "Inter", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: -1.5rem;
+}
+
+.chatroomIcon > button:hover {
+  background-image: linear-gradient(rgb(234, 234, 234), rgb(234, 234, 234)),
+  linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
 }

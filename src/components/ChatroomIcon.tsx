@@ -12,8 +12,10 @@ export default function ChatroomIcon(props: ChatroomIconProps) {
 
   return (
     <div className="chatroomIcon">
-      <h1>{props.name}</h1>
-      <h2>{props.creator}</h2>
+      <div>
+        <span>{props.name}</span>
+        <span>{props.creator}</span>
+      </div>
       <button
         onClick={() => {
           navigate(`/chatrooms/${props.id}`);
