@@ -3,7 +3,11 @@ import { useMutation } from "convex/react";
 import useStoreUserEffect from "../useStoreUserEffect";
 import { api } from "../../convex/_generated/api";
 
-export default function ChatroomCreate() {
+interface ChatroomCreateProps {
+  goBack: (e: FormEvent) => void;
+}
+
+export default function ChatroomCreate(props: ChatroomCreateProps) {
   const userId = useStoreUserEffect();
 
   const [newChatroomName, setChatroomName] = useState("");
@@ -16,18 +20,40 @@ export default function ChatroomCreate() {
   }
 
   return (
-    <form onSubmit={(e) => handleCreateChatroom(e)}>
-        <input
-          value={newChatroomName}
-          onChange={(event) => setChatroomName(event.target.value)}
-          placeholder="Create a chatroom…"
-        />
-        <input
-          type="submit"
-          value="Create"
-          disabled={newChatroomName === "" || userId === null}
-        />
-      </form>
-  )
-
+    <div
+      className="chatroomCreate"
+      onClick={(e) => {
+        props.goBack(e);
+      }}
+    >
+      <div className="formWrapper">
+        <span>Create Chatroom</span>
+        <form onSubmit={(e) => {
+          handleCreateChatroom(e);
+          props.goBack(e);
+          }}>
+          <input
+            type="text"
+            value={newChatroomName}
+            onChange={(event) => setChatroomName(event.target.value)}
+          />
+          <button
+            type="submit"
+            value="Create"
+            disabled={newChatroomName === "" || userId === null}
+          >
+            Create
+          </button>
+        </form>
+        <button
+          className="cancelButton"
+          onClick={(e) => {
+            props.goBack(e);
+          }}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  );
 }

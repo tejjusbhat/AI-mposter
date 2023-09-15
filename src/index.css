@@ -65,7 +65,11 @@
   min-height: 50vh;
   height: fit-content;
   width: 80vw;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(45, 45, 45, 0.8),
+    rgb(20, 20, 20, 0.8)
+  );
   flex-wrap: wrap;
   display: flex;
   justify-content: space-evenly;
@@ -84,10 +88,12 @@
 
 .chatroomIcon > div {
   width: 16rem;
+  max-width: 16rem;
   height: 10rem;
+  max-height: 10rem;
   border: 0.4rem solid transparent;
   border-radius: 2rem;
-  background-image: linear-gradient(rgba(0, 0, 0), rgba(0, 0, 0)),
+  background-image: linear-gradient(rgb(31, 31, 31), rgb(20, 20, 20)),
     linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
   background-origin: border-box;
   background-clip: content-box, border-box;
@@ -105,13 +111,7 @@
   font-weight: 600;
 }
 
-.chatroomIcon > div > span:last-child {
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
-}
-
 .chatroomIcon > button {
-  background-color: #ffffff;
   border: 0.2rem solid transparent;
   border-radius: 2rem;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
@@ -129,5 +129,79 @@
 
 .chatroomIcon > button:hover {
   background-image: linear-gradient(rgb(234, 234, 234), rgb(234, 234, 234)),
-  linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
+    linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
+}
+
+.chatroomCreate {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.chatroomCreate > .formWrapper {
+  height: 30rem;
+  width: 20rem;
+  border-radius: 2.5rem;
+  background-image: linear-gradient(to bottom right, #343434, #1d1d1d);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chatroomCreate > .formWrapper > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chatroomCreate > .formWrapper > span {
+  font-family: "Inter", Helvetica;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 2.5rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.chatroomCreate > .formWrapper input[type="text"] {
+  padding: 0.75rem 1.25rem;
+  margin: 0.5rem 0;
+  border: 0.2rem solid #ffffff;
+  border-radius: 1rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+.chatroomCreate > .formWrapper input[type="text"]:focus {
+  border: 0.2rem solid #454545;
+}
+
+.chatroomCreate button {
+  height: 3rem;
+  width: 7rem;
+  border-radius: 1.5rem;
+  margin: 0 0 1rem 0;
+  border: 0.2rem solid transparent;
+  border-radius: 2rem;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+    linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.chatroomCreate button:hover {
+  background-image: linear-gradient(rgb(203, 203, 203), rgb(255, 255, 255)),
+    linear-gradient(to bottom right, #44e9ff, #54ff98, #ffdb38, #ff6ed4);
+}
+
+.chatroomCreate button:disabled {
+  background-image: linear-gradient(rgb(203, 203, 203), rgb(255, 255, 255));
+}
+
+.chatroomCreate .cancelButton {
+  margin-top: 10rem;
 }
