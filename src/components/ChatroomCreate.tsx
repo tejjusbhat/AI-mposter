@@ -19,6 +19,12 @@ export default function ChatroomCreate(props: ChatroomCreateProps) {
     setChatroomName("");
   }
 
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    if (event.target.value.length <= 12) {
+      setChatroomName(event.target.value);
+    }
+  }
+
   return (
     <div
       className="chatroomCreate"
@@ -35,7 +41,7 @@ export default function ChatroomCreate(props: ChatroomCreateProps) {
           <input
             type="text"
             value={newChatroomName}
-            onChange={(event) => setChatroomName(event.target.value)}
+            onChange={(event) => handleChange(event)}
           />
           <button
             type="submit"

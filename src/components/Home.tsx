@@ -16,10 +16,11 @@ export const Home = (): JSX.Element => {
         </nav>
         <div className="label">
             <div className="find-the-imposter">
-                <h1>
+                <span>
                     Find The
+                    <br />
                     Imposter
-                </h1>
+                </span>
             </div>
         </div>
       </section>
