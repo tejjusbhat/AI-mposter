@@ -1,5 +1,5 @@
 /* reset */
-@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;500;600;800;900&display=swap');
 
 *::-webkit-scrollbar {
   display: none;
@@ -123,7 +123,7 @@
   color: #000000;
   font-family: "Inter", Helvetica;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 100;
   margin-top: -1.5rem;
 }
 
@@ -135,11 +135,10 @@
 .home {
   background-color: black;
   height: fit-content;
-  width: fit-content;
+  width: 100vw;
 }
 
 .home > section {
-  background-image: linear-gradient(160deg, #004C64, #000000 60%);
   min-height: 100vh;
   height: fit-content;
   width: 100vw;
@@ -147,6 +146,9 @@
   flex-direction: column;
 }
 
+.home .upper-section {
+  background-image: linear-gradient(160deg, #01232D 40%, #000000 70%);
+}
 .home > .upper-section > nav {
   display: flex;
   justify-content: center;
@@ -158,12 +160,13 @@
   position: absolute;
   display: flex;
   color: #ffffff;
-  font-family: "Inter-ExtraBold", Helvetica;
+  font-family: "Inter", Helvetica;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .home > .upper-section > nav > .text-wrapper > span {
+  border-bottom: transparent 0.2rem solid;
   padding: 0 5rem;
 }
 
@@ -175,11 +178,10 @@
   position: absolute;
   right: 2rem;
   padding: 0;
-  background-color: #ffffff;
   border: 0.2rem solid transparent;
   border-radius: 2rem;
   background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
-                    linear-gradient(to bottom right, #BB57B7, #468C37, #6D68AB);
+                    linear-gradient(to bottom right, #FF44F8, #5BF33B, #685BFF);
   background-origin: border-box;
   background-clip: content-box, border-box;
   height: 3rem;
@@ -187,20 +189,86 @@
   color: #ffffff;
   font-family: "Inter", Helvetica;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .home > .upper-section > nav button:hover {
   background-image: linear-gradient(white, white),
-                    linear-gradient(to bottom right, #6D68AB, #BB57B7, #468C37);
+                    linear-gradient(to bottom right, #685BFF, #FF44F8, #5BF33B);
   color: #000000;
 }
 
 .home > .upper-section .find-the-imposter {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 50vw;
   justify-content: center;
-  height: 210px;
-  width: 421px;
+  align-items: center;
+}
+
+.home > .upper-section .find-the-imposter > span {
+  margin-top: 6rem;
+  margin-bottom: 7%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  background-image: linear-gradient(to right, #FF2BF7, #1EC9FF, #31FF2D, #3C79FF, #D00909);
+  border: 0.4rem solid transparent;
+  color: white;
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+  font-size: 5.75rem;
+}
+
+.home > .upper-section .find-the-imposter button {
+  width: 18rem; 
+  height: 4rem;
+  border: 0.35rem solid transparent;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+                    linear-gradient(to bottom right, #FF2BF7, #3C79FF, #31FF2D, #FEE933);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+  font-size: 1.75rem;
+}
+
+.home > .upper-section .find-the-imposter button:hover {
+  color: white;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+                    linear-gradient(to bottom right, #31FF2D, #FEE933, #FF2BF7, #3C79FF);
+}
+
+.home .upper-middle-section {
+  color: white;
+}
+
+.home .lower-middle-section {
+  background-image: linear-gradient(to bottom, #01232D 25%, #000000 90%);
+  display: flex;
+  align-items: center;
+}
+
+.home .lower-middle-section span {
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
   font-size: 3rem;
-  font-weight: 700;
-  color: #ffffff;
+  width: 12rem;
+  color: white;
+  margin-top: 2.5rem;
+  padding-left: 2.5rem;
+  align-self: center;
+  border-bottom: white 0.3rem dashed;
+}
+
+.home .lower-middle-section .rules {
+  margin-top: 4rem;
+}
+
+.home .lower-middle-section .rules ul li{
+  color: white;
+  font-family: "Inter", Helvetica;
+  font-size: 1.5rem;
+  height: 3.5rem;
 }
