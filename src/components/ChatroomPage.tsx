@@ -27,7 +27,7 @@ export default function ChatroomPage(props: ChatroomPageProps) {
               navigate(`/`);
             }}
           >
-            Back
+            BACK
           </button>
         </div>
         <div className="messageBox">

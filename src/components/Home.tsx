@@ -1,14 +1,15 @@
 import { SignInButton } from "@clerk/clerk-react";
+import chatapp from "../assets/chat-app-logo.png";
 
 export const Home = (): JSX.Element => {
   return (
     <main className="home">
-      <section className="upper-section">
+      <section className="upper-section" id="home">
         <nav>
           <div className="text-wrapper">
-            <span>Home</span>
-            <span>Rules</span>
-            <span>About Us</span>
+            <span><a href="#home">Home</a></span>
+            <span><a href="#rules">Rules</a></span>
+            <span><a href="#about-us">About Us</a></span>
           </div>
           <SignInButton>
             <button>Sign In</button>
@@ -17,22 +18,25 @@ export const Home = (): JSX.Element => {
         <div className="label">
             <div className="find-the-imposter">
               <span className="find-the">
-                Find The
+                Convex
                 <br />
-                Imposter
+                Chat App
               </span>               
               <SignInButton>
                 <button>Get Started</button>
               </SignInButton>
             </div>
+            <div className="logo">
+              <img src={chatapp} alt="imposter" />
+            </div>
         </div>
       </section>
 
-      <section className="upper-middle-section">
-        <span>Don't know how to play?</span>
-      </section>
-
-      <section className="lower-middle-section">
+      <section className="middle-section" id="rules">
+        <div className="separation-line">
+          <div>yo</div>
+          <div>no u</div>
+        </div>
         <span>RULES</span>
         <div className="rules">
           <ul>
@@ -45,6 +49,36 @@ export const Home = (): JSX.Element => {
             <li>Do not use any slurs or offensive language.</li>
             <li>And lastly, remember there's a human behind the chat. Be kind.</li>
           </ul>
+        </div>
+      </section>
+
+      <section className="lower-section" id="about-us">
+        <span>ABOUT US</span>
+        <div className="about-us">
+          <div>
+            Privacy Policy
+            <br />
+            Terms and Conditions
+            <br />
+            Help
+            <br />
+            FAQ
+            <br />
+            Services
+          </div>
+          <div>
+            We made this project for the WebDevCody hackathon and to learn convex.
+            This is just a simple chatroom app for now but we plan to include AI as one of the chatroom members.
+            The game will then be to find the AI imposter.
+            We plan to add a lot more features to it too!
+          </div>
+          <div>
+            Contact Us 
+            <br />
+            Mail
+            <br />
+            Follow Us On
+          </div>
         </div>
       </section>
 
