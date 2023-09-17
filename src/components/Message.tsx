@@ -15,9 +15,13 @@ export default function Message(props: MessageProps) {
 
   return (
     <div className="message">
-      <span>{props.sender}:</span>
-      <span>{props.content}</span>
-      <span>{props.sentAt.toLocaleTimeString()}</span>
+      <div>
+        <div>
+          <span>{props.sender}</span>
+          <span>{props.content}</span>
+        </div>
+        <span>{props.sentAt.toLocaleTimeString()}</span>
+      </div>
       <button
         onClick={async () => {
           await likeMessage({ messageId: props.id });

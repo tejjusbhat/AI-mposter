@@ -14,7 +14,6 @@ export default function ChatroomIcon(props: ChatroomIconProps) {
     <div className="chatroomIcon">
       <div>
         <span>{props.name}</span>
-        <span>{props.creator}</span>
       </div>
       <button
         onClick={() => {

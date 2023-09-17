@@ -17,17 +17,20 @@ export default function SendMessage(props: {chatroomId: Id<"chatrooms">}) {
   }
 
   return (
-    <form onSubmit={(e) => handleSendMessage(e)}>
+    <div className="messageSend">
+      <form onSubmit={(e) => handleSendMessage(e)}>
       <input
+        type="text"
         value={newMessageText}
         onChange={(event) => setNewMessageText(event.target.value)}
         placeholder="Write a message…"
       />
-      <input
+      <button
         type="submit"
-        value="Send"
-        disabled={newMessageText === "" || userId === null}
-      />
+        disabled={newMessageText === "" || userId === null}>
+        {">"}
+      </button>
     </form>
+    </div>
   )
 }
