@@ -28,7 +28,7 @@ export default function SendMessage(props: {chatroomId: Id<"chatrooms">}) {
       <button
         type="submit"
         disabled={newMessageText === "" || userId === null}>
-        {">"}
+        {"SEND"}
       </button>
     </form>
     </div>

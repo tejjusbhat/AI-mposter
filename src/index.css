@@ -20,155 +20,12 @@ html {
   cursor: pointer;
 }
 
-/* Home */
-.home {
-  background-color: black;
-  height: fit-content;
-  width: 100vw;
-}
-
-.home > section {
-  min-height: 100vh;
-  height: fit-content;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-}
-
-.home .upper-section {
-  background-image: linear-gradient(160deg, #01232D 40%, #000000 70%);
-}
-.home > .upper-section > nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2.5rem 2rem;
-}
-
-.home > .upper-section > nav > .text-wrapper {
-  position: absolute;
-  display: flex;
-  color: #ffffff;
-  font-family: "Inter", Helvetica;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.home > .upper-section > nav > .text-wrapper > span {
-  border-bottom: transparent 0.2rem solid;
-  padding: 0 5rem;
-}
-
-.home > .upper-section > nav > .text-wrapper > span:hover{
-  border-bottom: #ffffff 0.2rem solid;
-}
-
-.home > .upper-section > nav button {
-  position: absolute;
-  right: 2rem;
-  padding: 0;
-  border: 0.2rem solid transparent;
-  border-radius: 2rem;
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
-                    linear-gradient(to bottom right, #FF44F8, #5BF33B, #685BFF);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  height: 3rem;
-  width: 7rem;
-  color: #ffffff;
-  font-family: "Inter", Helvetica;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.home > .upper-section > nav button:hover {
-  background-image: linear-gradient(white, white),
-                    linear-gradient(to bottom right, #685BFF, #FF44F8, #5BF33B);
-  color: #000000;
-}
-
-.home > .upper-section .find-the-imposter {
-  display: flex;
-  flex-direction: column;
-  height: 70vh;
-  width: 50vw;
-  justify-content: center;
-  align-items: center;
-}
-
-.home > .upper-section .find-the-imposter > span {
-  margin-top: 6rem;
-  margin-bottom: 7%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 4px transparent;
-  background-image: linear-gradient(to right, #FF2BF7, #1EC9FF, #31FF2D, #3C79FF, #D00909);
-  border: 0.4rem solid transparent;
-  color: white;
-  font-family: "Inter", Helvetica;
-  font-weight: 800;
-  font-size: 5.75rem;
-}
-
-.home > .upper-section .find-the-imposter button {
-  width: 18rem; 
-  height: 4rem;
-  border: 0.35rem solid transparent;
-  border-radius: 1.5rem;
-  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
-                    linear-gradient(to bottom right, #FF2BF7, #3C79FF, #31FF2D, #FEE933);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  font-family: "Inter", Helvetica;
-  font-weight: 800;
-  font-size: 1.75rem;
-}
-
-.home > .upper-section .find-the-imposter button:hover {
-  color: white;
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
-                    linear-gradient(to bottom right, #31FF2D, #FEE933, #FF2BF7, #3C79FF);
-}
-
-.home .upper-middle-section {
-  color: white;
-}
-
-.home .lower-middle-section {
-  background-image: linear-gradient(to bottom, #01232D 25%, #000000 90%);
-  display: flex;
-  align-items: center;
-}
-
-.home .lower-middle-section span {
-  font-family: "Inter", Helvetica;
-  font-weight: 800;
-  font-size: 3rem;
-  width: 12rem;
-  color: white;
-  margin-top: 2.5rem;
-  padding-left: 2.5rem;
-  align-self: center;
-  border-bottom: white 0.3rem dashed;
-}
-
-.home .lower-middle-section .rules {
-  margin-top: 4rem;
-}
-
-.home .lower-middle-section .rules ul li{
-  color: white;
-  font-family: "Inter", Helvetica;
-  font-size: 1.5rem;
-  height: 3.5rem;
-}
-
 /* Chatroom Select */
 
 .chatroomSelect {
   min-height: 100vh;
   height: fit-content;
-  background-image: linear-gradient(to left, #ba3c96, #006f9a);
+  background-image: linear-gradient(160deg, #01232D, #000000);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,19 +52,24 @@ html {
 }
 
 .chatroomSelect > .header button {
+  width: 12rem;
   height: 3.5rem;
-  border: transparent;
-  border-radius: 1rem;
-  background-color: #000000;
-  padding: 0.75rem 3rem 0.75rem 3rem;
-  color: #ffffff;
+  color: white;
+  border: 0.35rem solid transparent;
+  border-radius: 1.25rem;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+                    linear-gradient(to bottom right, #FF2BF7, #3C79FF, #31FF2D, #FEE933);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
   font-family: "Inter", Helvetica;
-  font-size: 1.3rem;
   font-weight: 600;
+  font-size: 1.3rem;
 }
 
 .chatroomSelect > .header button:hover {
-  background-color: #131313;
+  background-image: linear-gradient(white, white),
+                    linear-gradient(to bottom right, #685BFF, #FF44F8, #5BF33B);
+  color: #000000;
 }
 
 .chatroomSelect > .text-wrapper {
@@ -286,7 +148,7 @@ html {
   color: #000000;
   font-family: "Inter", Helvetica;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: -1.5rem;
 }
 
@@ -376,7 +238,7 @@ html {
 .chatroomPage {
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(to right, #ba3c96, #006f9a);
+  background-image: linear-gradient(160deg, #01232D 40%, #000000 70%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -532,4 +394,235 @@ html {
 
 .messageSend button:disabled {
   background-image: linear-gradient(rgb(203, 203, 203), rgb(255, 255, 255));
+}
+
+/* Home */
+
+.home {
+  height: fit-content;
+  width: 100vw;
+}
+
+.home > section {
+  min-height: 100vh;
+  height: fit-content;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.home .upper-section {
+  background-image: linear-gradient(160deg, #01232D 40%, #000000 70%);
+}
+
+.home > .upper-section > nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 2rem;
+}
+
+.home > .upper-section > nav > .text-wrapper {
+  position: absolute;
+  display: flex;
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.home > .upper-section > nav > .text-wrapper > span > a{
+  border-bottom: transparent 0.2rem solid;
+  color: white;
+  padding: 0 5rem;
+  text-decoration: none;
+}
+
+.home > .upper-section > nav > .text-wrapper > span > a:hover{
+  border-bottom: #ffffff 0.2rem solid;
+}
+
+.home > .upper-section > nav button {
+  position: absolute;
+  right: 2rem;
+  padding: 0;
+  border: 0.2rem solid transparent;
+  border-radius: 2rem;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+                    linear-gradient(to bottom right, #FF44F8, #5BF33B, #685BFF);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  height: 3rem;
+  width: 7rem;
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.home > .upper-section > nav button:hover {
+  background-image: linear-gradient(white, white),
+                    linear-gradient(to bottom right, #685BFF, #FF44F8, #5BF33B);
+  color: #000000;
+}
+
+.home > .upper-section .label {
+  display: flex;
+  align-items: center;
+}
+
+.home > .upper-section .label .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 50vw;
+  padding-top: 3rem;
+}
+
+.home > .upper-section .label .logo img {
+  width: 35vw;
+  height: 35vw;
+}
+
+.home > .upper-section .find-the-imposter {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.home > .upper-section .find-the-imposter > span {
+  margin-top: 6rem;
+  margin-bottom: 7%;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  background-image: linear-gradient(to right, #FF2BF7, #1EC9FF, #31FF2D, #3C79FF, #D00909);
+  border: 0.4rem solid transparent;
+  color: white;
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+  font-size: 5.75rem;
+}
+
+.home > .upper-section .find-the-imposter button {
+  width: 18rem; 
+  height: 4rem;
+  border: 0.35rem solid transparent;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
+                    linear-gradient(to bottom right, #FF2BF7, #3C79FF, #31FF2D, #FEE933);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+  font-size: 1.75rem;
+}
+
+.home > .upper-section .find-the-imposter button:hover {
+  color: white;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+                    linear-gradient(to bottom right, #31FF2D, #FEE933, #FF2BF7, #3C79FF);
+}
+
+.home .middle-section {
+  background-image: linear-gradient(to bottom, #000000 0%, #01232D 25%, #000000 99%); 
+  display: flex;
+  align-items: center;
+}
+
+.separation-line {
+  display: flex;
+  width: 100%;
+  height: 2px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.separation-line div{
+  width: 33%;
+  background-color: white;
+  color: white;
+  font-size: 3px;
+}
+
+.home .middle-section span {
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+  font-size: 3rem;
+  width: 12rem;
+  color: white;
+  margin-top: 2.5rem;
+  padding-left: 2.5rem;
+  align-self: center;
+  border-bottom: white 0.3rem dashed;
+}
+
+.home .middle-section .rules {
+  min-height: 50vh;
+  height: fit-content;
+  width: 80vw;
+  border: rgb(255, 255, 255, 0.1) 0.2rem solid;
+  filter: blur(1);
+  box-shadow: 0.2rem 0.2rem 1rem 0.8rem black;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 2rem;
+  padding: 2.5rem 0 2.5rem 0;
+  margin-bottom: 25px;
+  margin-top: 2rem;
+}
+
+.home .middle-section .rules ul li{
+  color: white;
+  font-family: "Inter", Helvetica;
+  font-size: 1.5rem;
+  height: 3.5rem;
+}
+
+.home .lower-section {
+  background-color: #000000;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0), rgba(6, 27, 22, 0.6));
+  filter: blur(1);
+  box-shadow: 0.2rem 0.2rem 1rem 0.8rem black;
+  display: flex;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.home .lower-section span {
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+  font-size: 3rem;
+  width: 18rem;
+  color: white;
+  margin-top: 2.5rem;
+  padding-left: 2.5rem;
+  align-self: center;
+  border-bottom: white 0.3rem dashed;
+}
+
+.home .lower-section .about-us {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: white;
+  margin-top: 4rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.home .lower-section .about-us div {
+  display: flex;
+  width: 30%;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: justify;
+  font-family: "Inter", Helvetica;
+  font-size: 1rem;
 }
